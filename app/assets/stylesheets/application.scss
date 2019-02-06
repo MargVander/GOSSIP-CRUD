@@ -1,0 +1,54 @@
+
+@import "bootstrap";
+
+
+.container-fluid {
+    margin-right:auto;
+    margin-left:auto
+ }
+
+a {
+  color: red;
+}
+
+a:hover {
+  text-decoration: none;
+  color: transparent;
+   text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+h5, h6 {
+  font-family: 'Permanent Marker', cursive;
+  color: red;
+}
+
+
+p.content-gossip {
+  font-size: 4rem; font-weight: 700;
+}
+p.title-gossip {
+  font-size: 5rem; font-weight: 700;
+}
+
+p.sub-infos {
+  font-size: 1rem; font-weight: 400;
+}
+
+p.italic {
+  font-style: italic;
+}
+
+
+h5:hover {
+  color: grey;
+
+}
+
+
+span.sound {
+      z-index: 10;
+      top: 8%;
+      left: 45%;
+      display: block;
+      position: fixed;
+}

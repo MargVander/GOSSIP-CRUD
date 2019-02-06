@@ -1,8 +1,26 @@
-<div class="jumbotron">
+<!-- <div class="jumbotron">
   <h4 class="display-4">Gossip n°<%= @gossips.id%></h4>
   <p class="lead"><strong>Author : </strong></br><%= link_to "#{@gossips.user.first_name} #{@gossips.user.last_name}", author_path(@gossips.user.id) %></p>
   <p class="lead"><strong>Title : </strong></br><%= @gossips.title.capitalize %></p>
   <p class="lead"><strong>Content : </strong></br><%= @gossips.content %></p>
   <p class="lead"><strong>City : </strong></br><%= link_to "#{@gossips.user.city.name}", city_path(@gossips.user.city.id) %></p>
   <p class="lead"><strong>Creation date : </strong></br><%= @gossips.created_at.strftime("%d-%m-%Y") %></p>
+</div> -->
+
+
+
+<h5 class="mt-5"><%= link_to "#{@gossips.user.first_name} #{@gossips.user.last_name}", author_path(@gossips.user.id) %></h5>
+  <p class="title-gossip pt-5"> <%= @gossips.title %> </p>
+  <p class ="content-gossip"> <%= @gossips.content %> </p>
+
+
+<div class="row ">
+
+<div class= "col-12">
+  <div class="d-flex justify-content-between">
+    <p class="sub-infos"> <%= link_to "#{@gossips.user.city.name}", city_path(@gossips.user.city.id) %></p> <p><%= @gossips.created_at.strftime("%d-%m-%Y") %></p>
+    </div>
+  </div>
+</div>
+
 </div>

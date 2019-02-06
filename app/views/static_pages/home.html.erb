@@ -8,21 +8,22 @@
   </div>
 <% end %>
 
-<h3>Bienvenue sur <span class="text-primary">The Gossip Project</span> !</h3>
-<p>Voila la liste des gossips déjà publiés :</p>
 
 
 
-<div class="row justify-content-around">
-  <% @gossips.each do |gossip| %>
-    <div class="card border-secondary bg-light mb-3 w-25 mx-5">
-    <div class="card-body">
-      <h4 class="card-title"><%= (gossip.title).capitalize %></h4>
-      <h5 class="card-subtitle mb-2 text-muted"><%= gossip.user.first_name %> <%= gossip.user.last_name %></h5></br>
-      <%= link_to "Voir le gossip", gossip_path(gossip.id), type: "button", class: "btn btn-outline-primary" %></br></br>
-      <%= link_to "Voir la page de l'auteur", author_path(gossip.user.id), type: "button", class: "btn btn-outline-secondary" %>
+
+<div class="container">
+  <span class ="sound">  <%= image_tag "sound.png" %> </span>
+
+  <div class="row">
+    <div class="col-6-m-auto">
+      <% @gossips.each do |gossip| %>
+    <a class="text-muted" href="<%= gossip_path(gossip.id) %>">
+      <h5 class="pr-4 display-4"> <%= gossip.user.first_name %> </h5>
+        </a>
+      <h1 class="mb-5"> <%= gossip.title %> </h1>
+    <% end %>
     </div>
-    </div>
-
-  <% end %>
+    <div class="col-6 bg-danger"></div>
+  </div>
 </div>
