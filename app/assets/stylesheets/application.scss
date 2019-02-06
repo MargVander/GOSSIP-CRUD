@@ -77,15 +77,11 @@ span.sound {
       position: fixed;
 }
 
-div.new-gossip > a{
-  display: block;
-  position: fixed;
+a.nav-link.gossip-create {
   font-family: $font-stack;
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   color: black;
-  top: 16%;
-  left: 55%;
-  z-index: 10;
+  cursor: pointer !important;
 }
 
 .img-team {
@@ -107,3 +103,7 @@ div.new-gossip > a{
 
 .list-group-item {border: none;}
 li.list-group-item { border: none;}
+
+.shape-bg {
+  overflow: hidden;
+}

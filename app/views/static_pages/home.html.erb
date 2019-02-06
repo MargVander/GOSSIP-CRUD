@@ -1,4 +1,3 @@
-<div class="new-gossip"><%= link_to "CREATE NEW GOSSIP", new_gossip_path , class: "nav-link new-gossip" %></div>
 
 <% if flash[:notice] %>
   <div class="alert alert-dismissible alert-success">
@@ -12,20 +11,24 @@
 
 
 
-<div class="container">
-  <span class ="sound">  <%= image_tag "sound.png" %> </span>
+  <!-- <span class ="sound">  <%= image_tag "sound.png" %> </span> -->
 
-  <div class="row">
+  <div class="row d-flex justify-content-between">
+    <div class="col-7"></div>
+    <div class="col-5">
+    <h4 class="gossip-create"><%= link_to "CREATE NEW GOSSIP", new_gossip_path , class: "nav-link gossip-create" %></h4>
+    </div>
     <div class="col-6-m-auto">
       <% @gossips.each do |gossip| %>
     <a class="text-muted" href="<%= gossip_path(gossip.id) %>">
-      <h5 class="pr-4 display-4"> <%= gossip.user.first_name %> </h5>
+      <h5 class="pr-4 display-4 d-flex"> <%= gossip.user.first_name %> </h5>
         </a>
       <h1 class="mb-5"> <%= gossip.title %> </h1>
       <!-- <p><%= link_to "EDIT THE GOSSIP", edit_gossip_path(gossip.id) %></P> -->
 
     <% end %>
+      </div>
+    <div class="col-6 shape-bg "><%= image_tag("bg-red.png", :alt => "fond de couleur") %>
     </div>
-    <div class="col-6"><%= image_tag("bg-red.png", :alt => "fond de couleur", class: "") %></div>
-  </div>
+
 </div>
