@@ -1,6 +1,9 @@
 
 @import "bootstrap";
 
+$font-stack: 'Permanent Marker', cursive;
+$fc: red;
+$hc: #6c6c6c;
 
 .container-fluid {
     height: 60vh;
@@ -9,20 +12,40 @@
  }
 
 a {
-  color: red;
+  color: $fc;
 }
 
+// a:hover {
+//   text-decoration: none;
+//   color: transparent;
+//    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+// }
+
+/* Circle */
 a:hover {
+  color: $hc;
+  cursor: pointer;
   text-decoration: none;
-  color: transparent;
-   text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  font-weight: bolder;
 }
+
 
 h5, h6 {
-  font-family: 'Permanent Marker', cursive;
-  color: red;
+  font-family: $font-stack;
+  color: $fc;
 }
 
+h5.city {
+  color: black;
+}
+
+h4 {
+  font-family: $font-stack;
+  color: black;
+
+}
+
+p { font-weight: 700;}
 
 p.content-gossip {
   font-size: 4rem; font-weight: 700;
@@ -41,7 +64,7 @@ p.italic {
 
 
 h5:hover {
-  color: grey;
+  color: $hc;
 
 }
 
@@ -57,3 +80,12 @@ span.sound {
 .img-team {
   width: 100%;
 }
+
+.card {
+  border: 10px solid black;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+
+li.list-group-item { border: none;}
