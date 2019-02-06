@@ -12,12 +12,13 @@
 
 <div class= "col-12">
   <div class="d-flex justify-content-between">
-    <p class="sub-infos"> <%= link_to "#{@gossips.user.city.name}", city_path(@gossips.user.city.id) %></p> <p><%= @gossips.created_at.strftime("%d-%m-%Y") %></p>
+    <p class="sub-infos"><b>City ></b> <%= link_to "#{@gossips.user.city.name}", city_path(@gossips.user.city.id) %></p> <p><%= @gossips.created_at.strftime("%d-%m-%Y") %></p>
     </div>
   </div>
   <div class="col-12">
-    <div class="d-flex justify-content-start">
-      <p><%= link_to "EDIT THE GOSSIP", edit_gossip_path %></P>
+    <div class="d-flex justify-content-between">
+      <p><%= link_to "EDIT", edit_gossip_path %></P>
+      <p><%= link_to "DELETE" %></P>
     </div>
   </div>
 </div>

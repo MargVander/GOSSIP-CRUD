@@ -38,5 +38,9 @@ class GossipsController < ApplicationController
     end
   end
 
+  def destroy
+    @gossip = Gossip.find(params[:id])
+  end
+
 
 end
