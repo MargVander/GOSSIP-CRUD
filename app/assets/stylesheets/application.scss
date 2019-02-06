@@ -77,6 +77,17 @@ span.sound {
       position: fixed;
 }
 
+div.new-gossip > a{
+  display: block;
+  position: fixed;
+  font-family: $font-stack;
+  font-size: 2.25rem;
+  color: black;
+  top: 16%;
+  left: 55%;
+  z-index: 10;
+}
+
 .img-team {
   width: 100%;
 }
@@ -87,5 +98,12 @@ span.sound {
   list-style-type: none;
 }
 
+.btn {
+  border-radius: 100px;
+  height: auto;
+  color: red;
+  font-family: $font-stack;
+}
 
+.list-group-item {border: none;}
 li.list-group-item { border: none;}

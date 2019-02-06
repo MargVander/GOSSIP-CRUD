@@ -1,19 +1,22 @@
 
   <%# <%= "Please input correct fields" %>
-
-<%= form_tag url_for(action: 'create'), method: "post" do %>
-
-<%= label_tag 'Title' %>
-      <%= text_field_tag 'title', @gossip.title %>
-      <br /> <br />
-
+  <div class="card">
+    <ul class="list-group-item list-group-flush">
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+      <li class="list-group-item">
+        <%= label_tag 'Title' %>
+      <%= text_field_tag 'title', @gossip.title, class: 'form-control' %>
+    </li>
+    <li class="list-group-item">
       <%= label_tag 'Content' %>
-      <%= text_area_tag 'content', @gossip.content %>
-      <br /> <br />
-
-<%= submit_tag "Create Post" %>
-
-<% end %>
+        <%= text_area_tag 'content', @gossip.content, class: 'form-control' %>
+          </li>
+            <li class="list-group-item">
+          <%= submit_tag "Create Post", class: 'btn' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
 
 <% if @gossip.errors.any? %>
