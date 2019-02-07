@@ -1,0 +1,24 @@
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between">
+      <h5 class="display-4 city"><%= @cities.name%></h5>
+      <h5 class="display-4 city pb-5">Gossips City</h5>
+    </div>
+  </div>
+
+<div class="card mb-5">
+  <ul class="list-group list-group-flush">
+      <% @cities.user.each do |user| %>
+        <% user.gossips.each do |gossip| %>
+            <li class="list-group-item">
+              <a href="<%= gossip_path(gossip[:id]) %>">
+               <h5><%= gossip[:title] %></h5>
+                </a>
+                  </li>
+                <li class="list-group-item">
+              <p><%= gossip[:content] %></p>
+            </li>
+        <% end %>
+      <% end %>
+  </ul>
+</div>

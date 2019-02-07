@@ -1,0 +1,49 @@
+
+
+
+<h5 class="mt-2">
+  <%= link_to "#{@gossips.user.first_name} #{@gossips.user.last_name}", author_path(@gossips.user.id) %>
+</h5>
+<p class="title-gossip pt-3"> <%= @gossips.title %> </p>
+  <p class ="content-gossip"> <%= @gossips.content %> </p>
+
+<hr>
+<div class="row ">
+  <div class="col-12">
+    <div class="d-flex py-2">
+      <%= button_to "Commenter le gossip", new_gossip_comment_path(@gossips), class: "btn", method: "get"   %>
+    </div>
+  </div>
+<div class= "col-12 mt-3">
+  <div class="d-flex justify-content-between">
+    <p class="sub-infos"><b>City -</b> <%= link_to "#{@gossips.user.city.name}", city_path(@gossips.user.city.id) %></p> <p><%= @gossips.created_at.strftime("%d-%m-%Y") %></p>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="d-flex justify-content-between">
+      <p><%= link_to "EDIT", edit_gossip_path %></p>
+      <a href=" <%= gossip_path(@gossips.id) %> " data-confirm="êtes-vous sûr ?" data-method="DELETE"> DELETE </a>
+    </div>
+  </div>
+</div>
+<hr>
+  <br />
+    <div class="row border-box mb-5">
+          <div class="d-flex">
+            <ul class="card list-group-item list-group-flush">
+              <% @comment.each do |comment| %>
+
+              <li class="lis-group-item">
+                <%= comment.content %>
+                <p><%= link_to "EDIT", edit_gossip_comment_path(@gossips.id,comment.id) %></p>
+                <a href=" <%= gossip_comment_path(comment.user[:id], comment[:id]) %> " data-confirm="êtes-vous sûr ?" data-method="DELETE"> DELETE </a>
+
+                  </li>
+                    <li>
+                      <%= link_to "#{comment.user[:first_name]}", author_path(comment.user[:id]) %>
+                    </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
