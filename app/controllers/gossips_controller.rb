@@ -7,8 +7,8 @@ class GossipsController < ApplicationController
 
 
   def show
-    @gossip = Gossip.find(params[:id])
-    @comment = @gossip.comments
+    @gossips = Gossip.find(params[:id])
+    @comment = @gossips.comments
   end
 
    def create
@@ -34,7 +34,7 @@ class GossipsController < ApplicationController
     if @gossip.update(gossip_params)
       flash[:notice] = "Post successfully modified"
       flash[:type] = "info"
-      redirect_to root_path
+      redirect_to gossip_path
     else
       render :edit
     end

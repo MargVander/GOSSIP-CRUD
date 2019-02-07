@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
 
       flash[:notice] = "Comment successfully modified"
       flash[:type] = "info"
-      redirect_to gossip_path
+      redirect_to gossip_path(params[:gossip_id])
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     flash[:notice] = "Post successfully destroy"
     flash[:type] = "info"
-    redirect_to gossip_path
+    redirect_to root_path
   end
 
 

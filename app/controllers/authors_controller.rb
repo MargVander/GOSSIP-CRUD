@@ -1,5 +1,7 @@
 class AuthorsController < ApplicationController
 
+  include SessionsHelper
+
   def index
 
   end
@@ -17,6 +19,8 @@ class AuthorsController < ApplicationController
 
       if @user.save
         flash[:notice] = "Post successfully created"
+        log_in(@user)# check method helper
+
         redirect_to root_path
       else
         render 'new'
