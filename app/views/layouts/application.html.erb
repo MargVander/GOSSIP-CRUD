@@ -19,7 +19,7 @@
   </head>
 
 <header>
-  <nav class="navbar navbar-white bg-white px-2 pb-2  aria-label="breadcrumb">
+  <nav class="navbar navbar-white bg-white px-2 pb-2r  aria-label="breadcrumb">
   <%= link_to "The Gossip Project", root_path , class: "navbar-brand" %>
 <ol class="breadcrumb bg-white">
     <ul class="nav">
@@ -29,6 +29,9 @@
 
       <li class="px-1 breadcrumb-item">
         <a> <%= link_to "Contact", contact_path  %> </a>
+      </li>
+      <li class="px-1 breadcrumb-item">
+        <a> <%= link_to "Sign in", new_author_path  %> </a>
       </li>
     </ul>
   </ol>
