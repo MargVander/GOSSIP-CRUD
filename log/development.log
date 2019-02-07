@@ -15975,3 +15975,158 @@ Completed 200 OK in 444ms (Views: 397.8ms | ActiveRecord: 26.5ms)
   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
   [1m[36mUser Destroy (4.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 12]]
   [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2019-02-07 16:46:57 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mGossip Load (2.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/static_pages/home.html.erb:22
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  Rendered static_pages/home.html.erb within layouts/application (278.4ms)
+Completed 200 OK in 629ms (Views: 517.2ms | ActiveRecord: 85.8ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2019-02-07 16:47:11 +0100
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 243ms (Views: 232.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2019-02-07 16:48:43 +0100
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 220ms (Views: 215.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2019-02-07 16:49:10 +0100
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 216ms (Views: 213.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for 127.0.0.1 at 2019-02-07 16:49:58 +0100
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e6/vgihMhtGX1F/fb5t7vNY/KyriJZEwXHSP9IZdyr82Xs7oMRaQohRVry0DiljcBLkoB1QLRRHSI0SHd21gRQ==", "first_name"=>"fernand", "last_name"=>"chevalier", "age"=>"32", "description"=>"Chasseur de sanglier de père en fils", "email"=>"fernandchevalier@lancelot.com", "password"=>"[FILTERED]", "commit"=>"Create Post"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:15
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:15
+  [1m[36mUser Create (3.9ms)[0m  [1m[32mINSERT INTO "users" ("city_id", "first_name", "last_name", "description", "email", "age", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["city_id", 3], ["first_name", "fernand"], ["last_name", "chevalier"], ["description", "Chasseur de sanglier de père en fils"], ["email", "fernandchevalier@lancelot.com"], ["age", 32], ["created_at", "2019-02-07 15:49:59.033354"], ["updated_at", "2019-02-07 15:49:59.033354"], ["password_digest", "$2a$10$4ojbZoMCGy1a5/z1lw2joupnTHhe46c7GzXI7uPSp.XcNJwZzAqM6"]]
+  ↳ app/controllers/authors_controller.rb:15
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/authors_controller.rb:18
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/authors_controller.rb:18
+Redirected to http://localhost:3000/
+Completed 302 Found in 236ms (ActiveRecord: 36.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-07 16:49:59 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mGossip Load (2.0ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/static_pages/home.html.erb:22
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/static_pages/home.html.erb:24
+  Rendered static_pages/home.html.erb within layouts/application (101.8ms)
+Completed 200 OK in 423ms (Views: 388.6ms | ActiveRecord: 28.7ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-07 16:50:15 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 211ms (Views: 202.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-07 16:50:39 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 177ms (Views: 174.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-07 16:50:42 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 214ms (Views: 210.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2019-02-07 16:50:44 +0100
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 252ms (Views: 246.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2019-02-07 16:50:45 +0100
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 181ms (Views: 166.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/team" for 127.0.0.1 at 2019-02-07 16:50:46 +0100
+Processing by StaticPagesController#team as HTML
+  Rendering static_pages/team.html.erb within layouts/application
+  Rendered static_pages/team.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 197ms (Views: 187.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-07 16:50:48 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 255ms (Views: 250.6ms | ActiveRecord: 0.0ms)
+
+

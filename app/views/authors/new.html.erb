@@ -9,16 +9,20 @@
     </li>
     <li class="list-group-item">
       <%= label_tag 'Lastname' %>
-        <%= text_area_tag 'last_name', @last_name, class: 'form-control' %>
+        <%= text_field_tag 'last_name', @last_name, class: 'form-control' %>
           </li>
               <li class="list-group-item">
             <%= label_tag 'Age' %>
-          <%= text_area_tag 'age', @age, class: 'form-control' %>
+          <%= text_field_tag 'age', @age, class: 'form-control' %>
         </li>
         <li class="list-group-item">
       <%= label_tag 'Description' %>
     <%= text_area_tag 'description', @description, class: 'form-control' %>
   </li>
+  <li class="list-group-item">
+<%= label_tag 'Email' %>
+<%= text_field_tag 'email', @email, class: 'form-control' %>
+</li>
   <li class="list-group-item">
     <%= label_tag 'Choose your password' %>
       <%= text_field_tag 'password', @password, class: 'form-control', type: "password" %>

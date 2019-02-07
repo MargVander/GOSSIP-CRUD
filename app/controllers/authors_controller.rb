@@ -12,7 +12,7 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    @user = User.create('first_name' => params[:first_name], 'last_name' => params[:last_name], city_id: 3, 'age' => params[:age], 'description' => params[:description], 'password' => params[:password])
+    @user = User.create('first_name' => params[:first_name], 'last_name' => params[:last_name], city_id: 3, 'age' => params[:age], 'description' => params[:description], 'email' => params[:email], 'password' => params[:password])
 
 
       if @user.save
