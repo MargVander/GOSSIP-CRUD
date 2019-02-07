@@ -52,6 +52,8 @@ p.content-gossip {
 }
 p.title-gossip {
   font-size: 5rem; font-weight: 700;
+  // // text-decoration-line: underline;
+  // text-decoration-color: $fc;
 }
 
 p.sub-infos {
@@ -95,7 +97,6 @@ a.nav-link.gossip-create {
 }
 
 .btn {
-  border-radius: 100px;
   height: auto;
   color: red;
   font-family: $font-stack;
@@ -106,4 +107,8 @@ li.list-group-item { border: none;}
 
 .shape-bg {
   overflow: hidden;
+}
+
+.border-box {
+  border: 15px solid black;
 }

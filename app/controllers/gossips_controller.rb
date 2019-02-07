@@ -2,6 +2,7 @@ class GossipsController < ApplicationController
 
   def show
     @gossips = Gossip.find(params[:id])
+    @comment = @gossips.comments
   end
 
    def new
@@ -48,7 +49,7 @@ class GossipsController < ApplicationController
     flash[:notice] = "Post successfully destroy"
     flash[:type] = "info"
     redirect_to root_path
-    
+
   end
 
 
