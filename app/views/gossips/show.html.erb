@@ -74,6 +74,12 @@
         <p class="sub-infos"><b>City -</b> <%= link_to "#{@gossips.user.city.name}", city_path(@gossips.user.city.id) %></p> <p><%= @gossips.created_at.strftime("%d-%m-%Y") %></p>
         </div>
       </div>
+      <div class="col-12">
+        <div class="d-flex justify-content-between">
+
+        </div>
+      </div>
+    </div>
     <hr>
       <br />
         <div class="row border-box mb-5">
@@ -83,6 +89,7 @@
 
                   <li class="lis-group-item">
                     <%= comment.content %>
+                  
                       </li>
                         <li>
                           <%= link_to "#{comment.user[:first_name]}", author_path(comment.user[:id]) %>
