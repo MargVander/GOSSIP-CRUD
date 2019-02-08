@@ -1,4 +1,5 @@
 class GossipsController < ApplicationController
+  include SessionsHelper
 
 
   def new
@@ -7,12 +8,14 @@ class GossipsController < ApplicationController
 
 
   def show
-    @gossips = Gossip.find(params[:id])
-    @comment = @gossips.comments
+    @gossip = Gossip.find(params[:id])
+    @comment = @gossip.comments
   end
 
    def create
-    @gossip = Gossip.new('content' => params[:content],'title' => params[:title],'user_id' => User.last.id )
+    @gossip = Gossip.new('content' => params[:content],'title' => params[:title])
+    @gossip.user = current_user
+
       if @gossip.save
         flash[:notice] = "Post successfully created"
         redirect_to root_path
@@ -22,7 +25,7 @@ class GossipsController < ApplicationController
    end
 
    def index
-    @gossips = Gossip.all
+    @gossip = Gossip.all
   end
 
   def edit
@@ -47,12 +50,29 @@ class GossipsController < ApplicationController
 
   def destroy
     @gossip = Gossip.find(params[:id])
+    p "$" * 150
+    puts params
+    p "$" * 150
     @gossip.destroy
     flash[:notice] = "Post successfully destroy"
     flash[:type] = "info"
     redirect_to root_path
-
   end
+
+  # def authenticate_user
+  #   unless current_user
+  #     flash[:danger] = "Please log in."
+  #     redirect_to new_session_path
+  #   end
+  # end
+  #
+  # def user_match
+  #   @gossip = Gossip.find(params[:id])
+  #   unless current_user.id == @gossip.user.id
+  #     flash[:danger] = "You are not allowed."
+  #     redirect_to root_path
+  #   end
+  # end
 
 
 end

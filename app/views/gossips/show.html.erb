@@ -1,13 +1,13 @@
 
 <% if current_user %>
-<% g = @gossips %>
+<% g = @gossip %>
 
 <h5 class="mt-2">
-  <%= link_to "#{@gossips.user.first_name} #{@gossips.user.last_name}", author_path(@gossips.user.id) %>
+  <%= link_to "#{@gossip.user.first_name} #{@gossip.user.last_name}", author_path(@gossip.user.id) %>
 </h5>
-<p class="title-gossip pt-3"> <%= @gossips.title %> </p>
-  <p class ="content-gossip"> <%= @gossips.content %> </p>
-  <% pre_like = @gossips.likes.find { |like| like.user_id == current_user.id} %>
+<p class="title-gossip pt-3"> <%= @gossip.title %> </p>
+  <p class ="content-gossip"> <%= @gossip.content %> </p>
+  <% pre_like = @gossip.likes.find { |like| like.user_id == current_user.id} %>
   <% if pre_like %>
     <a class="font-weight-light text-danger small" href="<%=gossip_like_path(g.id, pre_like)%> " data-method="DELETE">Unlike</a>
   <% else %>
@@ -20,18 +20,18 @@
 <div class="row ">
   <div class="col-12">
     <div class="d-flex py-2">
-      <%= button_to "Commenter le gossip", new_gossip_comment_path(@gossips), class: "btn", method: "get"   %>
+      <%= button_to "Commenter le gossip", new_gossip_comment_path(@gossip), class: "btn", method: "get"   %>
     </div>
   </div>
 <div class= "col-12 mt-3">
   <div class="d-flex justify-content-between">
-    <p class="sub-infos"><b>City -</b> <%= link_to "#{@gossips.user.city.name}", city_path(@gossips.user.city.id) %></p> <p><%= @gossips.created_at.strftime("%d-%m-%Y") %></p>
+    <p class="sub-infos"><b>City -</b> <%= link_to "#{@gossip.user.city.name}", city_path(@gossip.user.city.id) %></p> <p><%= @gossip.created_at.strftime("%d-%m-%Y") %></p>
     </div>
   </div>
   <div class="col-12">
     <div class="d-flex justify-content-between">
       <p><%= link_to "EDIT", edit_gossip_path %></p>
-      <a href=" <%= gossip_path(@gossips.id) %> " data-confirm="êtes-vous sûr ?" data-method="DELETE"> DELETE </a>
+      <a href=" <%= gossip_path(@gossip.id) %> " data-confirm="êtes-vous sûr ?" data-method="DELETE"> DELETE </a>
     </div>
   </div>
 </div>
@@ -44,7 +44,7 @@
 
               <li class="lis-group-item">
                 <%= comment.content %>
-                <p><%= link_to "EDIT", edit_gossip_comment_path(@gossips.id,comment.id) %></p>
+                <p><%= link_to "EDIT", edit_gossip_comment_path(@gossip.id,comment.id) %></p>
                 <a href=" <%= gossip_comment_path(comment.user[:id], comment[:id]) %> " data-confirm="êtes-vous sûr ?" data-method="DELETE"> DELETE </a>
 
                   </li>
@@ -61,17 +61,17 @@
     <% else %>
 
     <h5 class="mt-2">
-      <%= link_to "#{@gossips.user.first_name} #{@gossips.user.last_name}", author_path(@gossips.user.id) %>
+      <%= link_to "#{@gossip.user.first_name} #{@gossip.user.last_name}", author_path(@gossip.user.id) %>
     </h5>
-    <p class="title-gossip pt-3"> <%= @gossips.title %> </p>
-      <p class ="content-gossip"> <%= @gossips.content %> </p>
+    <p class="title-gossip pt-3"> <%= @gossip.title %> </p>
+      <p class ="content-gossip"> <%= @gossip.content %> </p>
 
     <hr>
     <div class="row ">
 
     <div class= "col-12 mt-3">
       <div class="d-flex justify-content-between">
-        <p class="sub-infos"><b>City -</b> <%= link_to "#{@gossips.user.city.name}", city_path(@gossips.user.city.id) %></p> <p><%= @gossips.created_at.strftime("%d-%m-%Y") %></p>
+        <p class="sub-infos"><b>City -</b> <%= link_to "#{@gossip.user.city.name}", city_path(@gossip.user.city.id) %></p> <p><%= @gossip.created_at.strftime("%d-%m-%Y") %></p>
         </div>
       </div>
       <div class="col-12">
@@ -89,7 +89,7 @@
 
                   <li class="lis-group-item">
                     <%= comment.content %>
-                  
+
                       </li>
                         <li>
                           <%= link_to "#{comment.user[:first_name]}", author_path(comment.user[:id]) %>
