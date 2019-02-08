@@ -1,6 +1,6 @@
 # Gossip Project
 
-<img style="width: 500px" src="/app/assest/images/hastag-ruby.png" alt="My cool ruby"/>
+<img style="width: 500px" src="/app/assets/images/hastag-ruby.png" alt="My cool ruby"/>
 
 ## Getting Started
 
