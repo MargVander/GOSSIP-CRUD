@@ -1,24 +1,41 @@
-# README
+# Gossip Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img style="width: 500px" src="/app/assest/images/hastag-ruby.png" alt="My cool ruby"/>
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+En ligne:
+Vous pouvez retrouver mon site ici https://gossipcrud-bam-studio-v1.herokuapp.com/
 
-* System dependencies
 
-* Configuration
+En local :
+Git clone le projet.
+Placez-vous à la racine de celui-ci puis dans le terminal :
 
-* Database creation
+`rails db:migrate`
+`rails db:seed`  => vous charge une base de donnée aléatoire.
 
-* Database initialization
 
-* How to run the test suite
+SI les validations posent problèmes avec les commandes ci-dessus, faites dans l'ordre suivant :
 
-* Services (job queues, cache servers, search engines, etc.)
+````
+rake db:drop
+rake db:create
+rake db:schema:load
+rake db:seed
 
-* Deployment instructions
+et enfin
+rake db:migrate
 
-* ...
+````
+
+
+## Built With
+
+* [Ruby on rails](https://rubyonrails.org/) - The web framework used
+
+
+
+## Authors
+
+* **Stéphane Sdr** - *Initial work* -
