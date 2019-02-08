@@ -7,12 +7,18 @@
   </div>
 <% end %>
 
-
-  <div class="row d-flex justify-content-between">
-    <div class="col-7"></div>
-    <div class="col-5">
-    <h4 class="gossip-create"><%= link_to "CREATE NEW GOSSIP", new_gossip_path , class: "nav-link gossip-create" %></h4>
+<% if current_user %>
+<div class="row d-flex justify-content-between">
+  <div class= "col py-4">
+    <div class="d-flex justify-content-between">
+      <h4 class="gossip-create">Welcome <%= User.find_by(id: session[:user_id]).first_name %> !</h4><h4 class="gossip-create"><%= link_to "CREATE NEW GOSSIP", new_gossip_path , class: "nav-link gossip-create" %></h4>
+      </div>
     </div>
+  </div>
+
+
+
+    <div class="row d-flex justify-content-between border-box p-2 mb-3 px-5 ">
     <div class="col-6-m-auto">
       <% @gossips.each do |gossip| %>
     <a class="text-muted" href="<%= gossip_path(gossip.id) %>">
@@ -22,7 +28,26 @@
       <!-- <p><%= link_to "EDIT THE GOSSIP", edit_gossip_path(gossip.id) %></P> -->
     <% end %>
       </div>
-    <div class="col-6 shape-bg ">
+    <!-- <div class="col-6 shape-bg ">
 
-  </div>
+  </div> -->
 </div>
+
+<% else %>
+
+<div class="row d-flex">
+  <div class="col-8 mt-5">
+    <% @gossips.each do |gossip| %>
+  <a class="text-muted" href="<%= gossip_path(gossip.id) %>">
+    <h5 class="pr-4 display-4 d-flex"> <%= gossip.user.first_name %> </h5>
+      </a>
+    <h1 class="mb-5"> <%= gossip.title %> </h1>
+    <!-- <p><%= link_to "EDIT THE GOSSIP", edit_gossip_path(gossip.id) %></P> -->
+  <% end %>
+    </div>
+  <div class="col-4"></div>
+
+
+</div>
+
+<% end %>

@@ -2,8 +2,8 @@
 @import "bootstrap";
 
 $font-stack: 'Permanent Marker', cursive;
-$fc: red;
-$hc: #6c6c6c;
+$fc: #0078ff;
+$hc: #000cff;
 
 .container-fluid {
     height: 60vh;
@@ -98,8 +98,12 @@ a.nav-link.gossip-create {
 
 .btn {
   height: auto;
-  color: red;
+  color: $fc;
   font-family: $font-stack;
+}
+
+.btn:hover {
+  color: $hc;
 }
 
 .list-group-item {border: none;}
@@ -111,4 +115,8 @@ li.list-group-item { border: none;}
 
 .border-box {
   border: 15px solid black;
+}
+
+h4.gossip-create {
+  font-size: 2.5rem;
 }
