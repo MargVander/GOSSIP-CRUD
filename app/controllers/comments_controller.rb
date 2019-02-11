@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
   include SessionsHelper
 
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+
+
   def new
     puts params
     @comment = Comment.new
@@ -20,16 +23,10 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:id])
     @gossip = params[:gossip_id]
   end
 
   def update
-    @comment = Comment.find(params[:id])
-    # puts params[:gossip]
-    # comment_params = params.require(:comment).permit(:content)
-    # comment_params = params[:content]
-    # puts "*" *70
     if @comment.update(content: params[:content], commenteable_id: params[:gossip_id], commenteable_type: "Gossip")
       @comment.user = current_user
       p "_-" * 120
@@ -45,16 +42,34 @@ class CommentsController < ApplicationController
   end
 
 
-  def destroy
-    @comment = Comment.find(params[:id])
-    p "^" * 120
-    p params
-    p "^" * 120
-    @comment.destroy
-    flash[:notice] = "Post successfully destroy"
-    flash[:type] = "info"
-    redirect_to root_path
-  end
+  # def destroy
+  #   @comment = Comment.find(params[:id])
+  #   p "^" * 120
+  #   p params
+  #   p "^" * 120
+  #   @comment.destroy
+  #   flash[:notice] = "Post successfully destroy"
+  #   flash[:type] = "info"
+  #   redirect_to root_path
+  # end
+
+#   def destroy
+#   @gossip = Gossip.find(params[:gossip_id])
+#   @comment = @gossip.comments.find(params[:id])
+#     p "^" * 120
+#     p params
+#     p "^" * 120
+#   @comment.destroy
+#
+#   redirect_to article_path(@gossip)
+# end
+
+  private
+
+  def set_comment
+  @comment = Comment.find(params[:id])
+end
+
 
 
 end

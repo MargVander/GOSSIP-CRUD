@@ -45,8 +45,11 @@
               <li class="lis-group-item">
                 <%= comment.content %>
                 <p><%= link_to "EDIT", edit_gossip_comment_path(@gossip.id,comment.id) %></p>
-                <a href=" <%= gossip_comment_path(comment.user[:id], comment[:id]) %> " data-confirm="êtes-vous sûr ?" data-method="DELETE"> DELETE </a>
 
+                <%= link_to 'Delete Comment',
+                                        gossip_comment_path(@gossip, @comment),
+                                        method: :delete,
+                                        data: { confirm: 'Are you sure?' } %>
                   </li>
                     <li>
                       <%= link_to "#{comment.user[:first_name]}", author_path(comment.user[:id]) %>
